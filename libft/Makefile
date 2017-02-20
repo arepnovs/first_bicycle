@@ -63,6 +63,8 @@ SRC = ft_lstmap.c \
 	  ft_strcapitalize.c\
 	  ft_strnlen.c\
 	  ft_count_words.c\
+	  ft_charjoin.c\
+	  ft_repeat_check.c\
 
 OBJ  = $(SRC:.c=.o) 
 
