@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# define BUFF_SIZE 120
 
 typedef struct		s_list
 {
@@ -24,6 +25,14 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_gnl
+{
+    int				fd;
+    char			*str;
+    struct s_gnl	*next;
+}					t_gnl;
+
+int                 get_next_line(const int fd, char **line);
 void				ft_swap(int *a, int *b);
 size_t				ft_strnlen(const char *s, size_t maxlen);
 char				*ft_strcapitalize(char *str);
@@ -88,7 +97,5 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_arr_putstr(char **str);
-char                *ft_charjoin(const char *s1, const char s2);
-int					ft_repeat_check(char *str, char c, int j);
 
 #endif
